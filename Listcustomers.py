@@ -17,8 +17,11 @@ def hello():
     query = "select * from customers"
     mycursor.execute(query)
     result = mycursor.fetchall()
-    for row in result:
-        x = x+ "\n" + row
-    return "<h1>"+ x +"</h1>"
+    
+    for rows in result:
+        x = x+str(rows)+"<br/>"             
+    return x
 
 
+if __name__ == "__main__":
+    app.run()
